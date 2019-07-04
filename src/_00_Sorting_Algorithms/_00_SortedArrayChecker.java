@@ -71,9 +71,13 @@ public class _00_SortedArrayChecker {
 		String lastString = "";
 		
 		for (int i = 0; i < strings.length; i++) {
-			lastString.compareTo(strings[i]);
-		lastString = strings[i];
 		
+			if (lastString.compareTo(strings[i]) > 0) {
+				
+			return false;
+			
+			}
+		lastString = strings[i];
 		}
 		return true;
 		

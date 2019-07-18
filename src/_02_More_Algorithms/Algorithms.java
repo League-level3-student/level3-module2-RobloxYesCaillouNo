@@ -84,15 +84,38 @@ public class Algorithms {
 		return results;
 	}
 
-	public static String sortDNA(List<String> unsortedSequences) {
+	public static List<String> sortDNA(List<String> Sequences) {
 		// TODO Auto-generated method stub
-		for (int i = 0; i < unsortedSequences.size(); i++) {
-			
+		for (int i = 0; i < Sequences.size(); i++) {
+			for (int j = Sequences.size() - 1; j > 0; j--) {
+				if (Sequences.get(j).length() < Sequences.get(j-1).length()) {
+					String swap = Sequences.get(j-1);
+					Sequences.set(j-1, Sequences.get(j));
+					Sequences.set(j, swap);
+				}
+			}
 		}
 		
 		
 		
-		return null;
+		return Sequences;
+	}
+
+	public static List<String> sortWords(List<String> words) {
+		// TODO Auto-generated method stub
+		for (int i = 0; i < words.size(); i++) {
+			for (int j = words.size() -1 ; j > 0; j--) {
+				if (words.get(j).compareTo(words.get(j-1)) < 0) {
+					String swap = words.get(j-1);
+					words.set(j-1, words.get(j));
+					words.set(j, swap);
+					
+					
+				}
+			}
+		}
+		
+		return words;
 	}
 
 }
